@@ -23,9 +23,97 @@
             <div>
                 <p style="width: 318px;margin-left: 30px;">Clique em cada número para conhecer os dados de
                     acessibilidade nas UBS:</p>
-                <img class="animate__animated animate__backInRight" src="recursos/imgs/Grupo_2507.svg"
-                    style="width: 250px;">
+                <div>
+                    <img class="animate__animated animate__backInRight" src="recursos/imgs/Grupo_2507.svg"
+                        style="width: 280px;margin-top: 30px;margin-left: 55px;">
+
+                    <img id="botao_1" class="animate__animated animate__backInRight" src="recursos/imgs/botao1.svg"
+                        style="width: 82px;position: absolute;top: 150px;left: 653px;">
+                    <img id="botao_2" class="animate__animated animate__backInRight" src="recursos/imgs/botao2.svg"
+                        style="width: 82px;position: absolute;top: 260px;left: 533px;">
+                    <img id="botao_3" class="animate__animated animate__backInRight" src="recursos/imgs/botao3.svg"
+                        style="width: 82px;position: absolute;top: 370px;left: 600px;">
+                    <img id="botao_4" class="animate__animated animate__backInRight" src="recursos/imgs/botao4.svg"
+                        style="width: 82px;position: absolute;top: 370px;left: 700px;">
+                    <img id="botao_5" class="animate__animated animate__backInRight" src="recursos/imgs/botao5.svg"
+                        style="width: 82px;position: absolute;top: 260px;left: 773px;">
+                </div>
+            </div>
+
+            <div>
+                <div id="janela_1"
+                    style="position: absolute;left: 160px;top: 155px;width: 348px;height: 316px;background: #8F289E 0% 0% no-repeat padding-box;border: 1px solid #707070;">
+                    <img src="recursos/imgs/botao1.svg" style="width: 82px;margin-top: -50px;margin-left: 126px;">
+                    <div style="color: white;width: 348px;text-align: center;margin-top: 70px;">
+                        <p style="font-size: 30px;text-align: center; font-family: Segoe UI Bold;">87,1%</p>
+                        <p style="font-size: 24px;text-align: center; font-family: Segoe UI;">apresentam todos os<br>
+                            ambientes com sinalização</p>
+                    </div>
+                </div>
+                <div id="janela_2"
+                    style="position: absolute;left: 160px;top: 155px;width: 348px;height: 316px;background: #29999B 0% 0% no-repeat padding-box;border: 1px solid #707070;">
+                    <img src="recursos/imgs/botao2.svg" style="width: 82px;margin-top: -50px;margin-left: 126px;">
+                    <div style="color: white;width: 348px;text-align: center;margin-top: 70px;">
+                        <p style="font-size: 30px;text-align: center; font-family: Segoe UI Bold;">19,6%</p>
+                        <p style="font-size: 24px;text-align: center; font-family: Segoe UI;">possuem corrimão nos<br>
+                            locais não nivelados</p>
+                    </div>
+                </div>
+                <div id="janela_3"
+                    style="position: absolute;left: 160px;top: 155px;width: 348px;height: 316px;background: #459E28 0% 0% no-repeat padding-box;border: 1px solid #707070;">
+                    <img src="recursos/imgs/botao3.svg" style="width: 82px;margin-top: -50px;margin-left: 126px;">
+                    <div style="color: white;width: 348px;text-align: center;margin-top: 70px;">
+                        <p style="font-size: 30px;text-align: center; font-family: Segoe UI Bold;">24,1%</p>
+                        <p style="font-size: 24px;text-align: center; font-family: Segoe UI;">têm piso tátil para acesso
+                            às<br> dependências da unidade</p>
+                    </div>
+                </div>
+                <div id="janela_4"
+                    style="position: absolute;left: 160px;top: 155px;width: 348px;height: 316px;background: #9E2828 0% 0% no-repeat padding-box;border: 1px solid #707070;">
+                    <img src="recursos/imgs/botao4.svg" style="width: 82px;margin-top: -50px;margin-left: 126px;">
+                    <div style="color: white;width: 348px;text-align: center;margin-top: 70px;">
+                        <p style="font-size: 30px;text-align: center; font-family: Segoe UI Bold;">76,2%</p>
+                        <p style="font-size: 24px;text-align: center; font-family: Segoe UI;"> contam com cadeira de
+                            rodas disponível e em condição de uso para deslocamento dos usuários</p>
+                    </div>
+                </div>
+                <div id="janela_5"
+                    style="position: absolute;left: 160px;top: 155px;width: 348px;height: 316px;background: #9E9528 0% 0% no-repeat padding-box;border: 1px solid #707070;">
+                    <img src="recursos/imgs/botao5.svg" style="width: 82px;margin-top: -50px;margin-left: 126px;">
+                    <div style="color: white;width: 348px;text-align: center;margin-top: 70px;">
+                        <p style="font-size: 30px;text-align: center; font-family: Segoe UI Bold;">77,3%</p>
+                        <p style="font-size: 24px;text-align: center; font-family: Segoe UI;">têm entrada externa<br>
+                            adaptada para cadeira de rodas</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        $(document).find('[id^=btn]').hide();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).css('cursor', 'pointer');
+            // $(botao).hover(() => {
+            //     console.log($(botao));
+            //     $(botao).css('transform', 'scale(1.8)')
+            //     $(botao).css('transition', 'all 0.9s')
+            // });
+            $(botao).mouseleave(() => {
+                $(document).find('[id^=btn]').hide();
+            });
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+            })
+        }
+    })
+</script>

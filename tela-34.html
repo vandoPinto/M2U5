@@ -17,6 +17,68 @@
         o que Cecílio (2001) aponta como sendo quatro conjunto de necessidades.</p>
     <p>Clique nos números para conhecer cada um desses
         conjuntos.</p>
+    <div>
+        <div class="animate__animated animate__backInLeft" id="botao_1"
+            style="position: absolute; width: 90px; height: 140px; top: 298px; left: 234px; ">
+            <img src="recursos/imgs/bota1.svg">
+        </div>
+        <div class="animate__animated animate__backInLeft" id="botao_2"
+            style="position: absolute; width: 90px; top: 298px;left: 367px;  ">
+            <img src="recursos/imgs/bota2.svg">
+        </div>
+        <div class="animate__animated animate__backInDown" id="botao_3"
+            style="position: absolute; width: 90px; height: 140px; top: 298px; left: 499px; ">
+            <img src="recursos/imgs/bota3.svg">
+        </div>
+        <div class="animate__animated animate__backInRight" id="botao_4"
+            style="position: absolute; width: 90px; height: 140px; top: 298px; left: 624px; ">
+            <img src="recursos/imgs/bota4.svg">
+        </div>
+    </div>
+    <div style="position: absolute;">
+        <div id="janela_1"
+            style="width: 772px; height: 119px; margin-top: -110px;margin-left: 20px;background: 0% 0% no-repeat padding-box padding-box rgb(84, 191, 205); cursor: pointer;z-index: 100;">
+            <div style="display: flex;justify-content: space-between;;">
+                <p style="font-size: 20px;color: #FFFFFF;margin: auto;margin-left: 16px;">Necessidade por boas condições
+                    de
+                    vida.</p>
+                <p style="font-size: 100px;color: #FFFFFF;margin: 0;font-weight: bold;margin-right: 16px;">
+                    1</p>
+            </div>
+            <p style="font-size: 13px;color: white;margin-top: -118px;margin-left: 760px;">x</p>
+        </div>
+        <div id="janela_2"
+            style="width: 772px; height: 119px; margin-top: -110px;margin-left: 20px;background: #108141 0% 0% no-repeat padding-box; cursor: pointer;z-index: 100;">
+            <div style="display: flex;justify-content: space-between;;">
+                <p style="font-size: 20px;color: #FFFFFF;margin: auto;margin-left: 16px;">Necessidade de se
+                    ter acesso e se poder consumir toda<br> tecnologia de saúde capaz de melhorar e prolongar a vida.
+                </p>
+                <p style="font-size: 100px;color: #FFFFFF;margin: 0;font-weight: bold;margin-right: 16px;">
+                    2</p>
+            </div>
+            <p style="font-size: 13px;color: white;margin-top: -118px;margin-left: 760px;">x</p>
+        </div>
+        <div id="janela_3"
+            style="width: 772px; height: 119px; margin-top: -110px;margin-left: 20px;background: #29696D 0% 0% no-repeat padding-box; cursor: pointer;z-index: 100;">
+            <div style="display: flex;justify-content: space-between;;">
+                <p style="font-size: 20px;color: #FFFFFF;margin: auto;margin-left: 16px;">Criação de vínculos
+                    efetivos entre cada usuário e<br> uma equipe e/ou um profissional.</p>
+                <p style="font-size: 100px;color: #FFFFFF;margin: 0;font-weight: bold;margin-right: 16px;">
+                    3</p>
+            </div>
+            <p style="font-size: 13px;color: white;margin-top: -118px;margin-left: 760px;">x</p>
+        </div>
+        <div id="janela_4"
+            style="width: 772px; height: 119px; margin-top: -110px;margin-left: 20px;background: #54BFCD 0% 0% no-repeat padding-box; cursor: pointer;z-index: 100;">
+            <div style="display: flex;justify-content: space-between;;">
+                <p style="font-size: 20px;color: #FFFFFF;margin: auto;margin-left: 16px;">Graus crescentes de
+                    autonomia no seu<br> modo de andar a vida.</p>
+                <p style="font-size: 100px;color: #FFFFFF;margin: 0;font-weight: bold;margin-right: 16px;">
+                    4</p>
+            </div>
+            <p style="font-size: 13px;color: white;margin-top: -118px;margin-left: 760px;">x</p>
+        </div>
+    </div>
 </div>
 <footer style="width: 1008px;height: 19px;display: flex;background-color: #0D536A;">
     <div style="margin-top: -8px;display: flex;margin-left: 42px;">
@@ -27,3 +89,28 @@
         <p style="margin-left: 15px;color: white;font-size: 11px;margin-top: 12px;">TERRITÓRIO</p>
     </div>
 </footer>
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        $(document).find('[id^=btn]').hide();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).css('cursor', 'pointer');
+            $(botao).hover(() => {
+                $(document).find(`[id=btn_${index + 1}_2]`).show();
+            });
+            $(botao).mouseleave(() => {
+                $(document).find('[id^=btn]').hide();
+            });
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+            })
+        }
+    })
+</script>
