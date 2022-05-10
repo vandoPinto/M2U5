@@ -5,5 +5,88 @@
     <div style="margin-right: 57px;width: 662px;margin-top: 48px;">
         <p style="margin-top: 40px;">Vejamos as análises de vulnerabilidade, conforme proposto por (AYRES, 2009):
         </p>
+        <div>
+            <div class="animate__animated animate__backInLeft" id="botao_1"
+                style="position: absolute; top: 126px; left: 167px; ">
+                <img src="recursos/imgs/bo1.svg">
+            </div>
+            <div class="animate__animated animate__backInLeft" id="botao_2"
+                style="position: absolute; top: 249px; left: 167px; ">
+                <img src="recursos/imgs/bo2.svg">
+            </div>
+            <div class="animate__animated animate__backInDown" id="botao_3"
+                style="position: absolute; top: 373px; left: 167px; ">
+                <img src="recursos/imgs/bo3.svg">
+            </div>
+        </div>
+        <div>
+            <div id="janela_1"
+                style="position: absolute; top: 50px; background-color: rgb(204, 217, 237); width: 704px; height: 159px; ">
+                <div style="width: 678px;margin-left: 30px;">
+                    <p>Parte do princípio de que todas as pessoas são suscetíveis à exposição e ao adoecimento.
+                        Consideram
+                        aspectos
+                        relacionados ao modo de vida que podem contribuir para que essas pessoas se exponham ou se
+                        protejam.
+                    </p>
+                    <p>Diz respeito ao
+                        grau e à qualidade da informação que as pessoas possuem, ; à capacidade de elaborar e
+                        incorporar
+                        as
+                        informações às suas
+                        práticas e ao interesse e às possibilidades efetivas de transformar as informações, as
+                        preocupações
+                        em práticas de
+                        prevenção.</p>
+                </div>
+            </div>
+            <div id="janela_2"
+                style="position: absolute; top: 200px; background-color: rgb(204, 217, 237); width: 704px; height: 159px; ">
+                <div style="width: 678px;margin-left: 30px;margin-top: 40px;">
+                    <p>Considera que a obtenção de informações e a transformação em mudança das práticas dependem de
+                        fatores que não são só os
+                        individuais, mas também do : "acesso a meios de comunicação, escolarização, disponibilidade
+                        de
+                        recursos materiais, poder
+                        de influenciar decisões políticas, possibilidade de enfrentar barreiras culturais, estar
+                        livre
+                        de coerções violentas, ou
+                        poder defender-se delas, etc.</p>
+                </div>
+            </div>
+            <div id="janela_3"
+                style="position: absolute; top: 330px; background-color: rgb(204, 217, 237); width: 704px; height: 159px; ">
+                <div style="width: 638px;margin-left: 30px;margin-top: 60px;">
+                    <p>Relacionada a como as instituições, especialmente as de saúde, educação, bem-estar social e
+                        cultura lidam para reduzir
+                        contextos de vulnerabilidade.</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        $(document).find('[id^=btn]').hide();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).css('cursor', 'pointer');
+            $(botao).hover(() => {
+                $(document).find(`[id=btn_${index + 1}_2]`).show();
+            });
+            $(botao).mouseleave(() => {
+                $(document).find('[id^=btn]').hide();
+            });
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+            })
+        }
+    })
+</script>
