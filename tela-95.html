@@ -23,9 +23,70 @@
             equipes da
             APS.</p>
     </div>
-    <div>
-        <img style="margin-top: 22px;margin-right: 100px;width: 265px;height: 343px;"
-            src="recursos/imgs/img-slide-53.png">
+    <div style="margin-right: 70px;margin-top: 50px;">
+        <div id="botao_1" style="cursor: pointer;">
+            <img id="bt1" src="recursos/imgs/btns_1.svg" style="width: 89px;margin-left: -120px;margin-top: 30px;">
+            <img id="btn_1_2" src="recursos/imgs/btns_1_2.svg"
+                style="width: 89px;margin-left: -120px;margin-top: 30px;">
+        </div>
+        <div id="botao_2" style="margin-left: -214px;margin-top: -50px;">
+            <img id="bt2" src="recursos/imgs/btns_2.svg" style="width: 110px;">
+            <img id="btn_2_2" src="recursos/imgs/btns_2_2.svg" style="width: 110px;">
+        </div>
+        <div id="botao_3" style="margin-top: -64px;margin-left: -139px;">
+            <img id="bt3" src="recursos/imgs/btns_3.svg" style="width: 150px;">
+            <img id="btn_3_2" src="recursos/imgs/btns_3_2.svg" style="width: 150px;">
+        </div>
+    </div>
+</div>
+<div>
+    <div id="janela_1"
+        style="position: absolute;top: 60px;width: 890px; height: 403px; background: 0% 0% no-repeat padding-box padding-box rgba(38, 61, 89, 0.8); cursor: pointer;">
+        <img src="recursos/imgs/btns_1_2.svg" style="width: 113px;position: absolute;left: 10px;">
+        <div
+            style="width: 534px;height: 314px;background: #A0B8D6 0% 0% no-repeat padding-box;margin-top: 60px;margin-left: 23px;">
+            <p
+                style="width: 478px;height: 174px;text-align: left;font-size: 16px;color: #263D59;position: absolute;top: 50%;transform: translate(0, -50%);margin-left: 30px;">
+                A equipe precisa selecionar qual trabalhador será responsável e qual horário do dia será usado para
+                ler e responder os
+                e-mails. Estes podem servir para os usuários agendarem consulta, solicitarem renovação de receitas e
+                informações de
+                saúde e sobre serviços disponíveis na unidade, receberem resultados de exames etc. Podem ainda
+                funcionar como canal para
+                comunicação com os demais serviços da rede e com a gestão. É importante evitar demora nas respostas,
+                para que essa forma
+                de comunicação com os usuários seja valorizada e entendida como possível.</p>
+        </div>
+    </div>
+    <div id="janela_2"
+        style="position: absolute;top: 60px;width: 890px; height: 403px; background: #422556CC 0% 0% no-repeat padding-box;">
+        <img src="recursos/imgs/btns_2_2.svg" style="width: 113px;position: absolute;left: 10px;">
+        <div
+            style="width: 534px;height: 314px;background: #D7B1E5 0% 0% no-repeat padding-box;margin-top: 60px;margin-left: 23px;">
+            <p
+                style="width: 478px;height: 174px;text-align: left;font-size: 16px;color: #422556;position: absolute;top: 60%;transform: translate(0, -50%);margin-left: 30px;">
+                As equipes devem reservar na agenda horário para responder e retornar os telefonemas dos usuários, que
+                podem ligar para
+                tirar dúvidas sobre medicamentos, sobre alguma orientação dada na consulta que não foi entendida ou
+                outras dúvidas
+                clínicas pontuais.</p>
+        </div>
+    </div>
+    <div id="janela_3"
+        style="position: absolute;top: 60px;width: 890px; height: 403px; background: #25563ACC 0% 0% no-repeat padding-box;">
+        <img src="recursos/imgs/btns_3_2.svg" style="width: 113px;position: absolute;left: 10px;">
+        <div
+            style="width: 534px;height: 314px;background: #B9E5B1 0% 0% no-repeat padding-box;margin-top: 60px;margin-left: 23px;">
+            <p
+                style="width: 478px;height: 174px;text-align: left;font-size: 16px;color: #25563A;position: absolute;top: 60%;transform: translate(0, -50%);margin-left: 30px;">
+                Utilizar plataformas de comunicação que incluam mensagens instantâneas para comunicação entre os
+                diferentes espaços da
+                unidade (consultórios, recepção, farmácia, curativo), evitando assim interrupções nos atendimentos ao
+                entrar ou bater na
+                porta. Podem ser usadas também para discussão de algum caso e realização de interconsultas e contato com
+                outros pontos
+                da rede.</p>
+        </div>
     </div>
 </div>
 <footer style="width: 1008px;height: 19px;display: flex;background-color: #0D536A;">
@@ -37,3 +98,26 @@
         <p style="margin-left: 15px;color: white;font-size: 11px;margin-top: 12px;">TERRITÓRIO</p>
     </div>
 </footer>
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        $(document).find('[id^=btn]').hide();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).css('cursor', 'pointer');
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+                $(document).find(`[id=btn_${index + 1}_2]`).show();
+                $(document).find(`[id=bt${index + 1}]`).hide();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+                $(document).find(`[id=btn_${index + 1}_2]`).hide();
+                $(document).find(`[id=bt${index + 1}]`).show();
+            })
+        }
+    })
+</script>
