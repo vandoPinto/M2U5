@@ -115,6 +115,14 @@
                 $(document).find(`[id=btn_${index + 1}_2]`).show();
                 $(document).find(`[id=bt${index + 1}]`).hide();
             })
+            $(botao).mouseover(() => {
+                $(document).find(`[id=btn_${index + 1}_2]`).show();
+                $(document).find(`[id=bt${index + 1}]`).hide();
+            })
+            $(botao).mouseout(() => {
+                $(document).find(`[id=btn_${index + 1}_2]`).hide();
+                $(document).find(`[id=bt${index + 1}]`).show();
+            })
         })
         function apagarJanelas() {
             janelas.map((index, janela) => {
