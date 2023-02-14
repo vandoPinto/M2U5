@@ -1,23 +1,91 @@
-<div class="coluna-esquerda altura-1_1 largura-1_3 centro">
-    <img src="recursos/imgs/T5.svg" style="top: 0px;left: 0px;width: 140px;">
+<div style="height: 60px;width: 100%;">
+    <img style="height: 60px;position: absolute;right: 0px;" src="recursos/imgs/H1.png">
+    <p style="position: absolute;color: white;margin-left: 42px;margin-top: 26px;font-size: 12px;">TÓPICO<strong>
+            2</strong></p>
+    <p style="position: absolute;color: white;margin-left: 112px;margin-top: 26px;font-size: 11px;width: 450px;">
+        ACOLHIMENTO NAS PRÁTICAS DE GESTÃO E ATENÇÃO À SAÚDE NA APS</p>
 </div>
-<div class="coluna-direita">
-    <div style="margin-right: 57px;width: 662px;margin-top: 180px;">
-        <div class="animate__animated animate__backInRight"
-            style="margin-top: 50px;margin-left: 30px;display: flex;flex-direction: row;width: 640px;height: 143px;background: #E7F1F8 0% 0% no-repeat padding-box;border-radius: 10px;top: 139px;right: 15px;">
-            <img src="recursos/imgs/maozinha.svg" style="width: 62px;height: 40px;margin-top: 65px;margin-left: 3px;">
-            <div style="display: initial;margin-left: 20px;width: 539px;">
-                <p style="font-weight: bold;color: #294666;font-size: 15px;">ATENÇÃO</p>
-                <p style="font-size: 12px;">Importante destacar que as equipes de saúde devem ser flexíveis quanto
-                    ao fluxo que acontece de fato e que será
-                    diferente daqueles que foram pensados e desenhados. Os fluxos estabelecidos devem ser
-                    orientadores para organização do
-                    processo de trabalho das equipes e estratégias de participação, elucidação e apropriação dos
-                    usuários sobre o
-                    funcionamento da unidade, mas não devem se configurar como limitadores de acesso ou como
-                    orientações que não podem ser
-                    alteradas (BRASIL, 2013a).</p>
-            </div>
+<div style="margin-top: 23px;margin-left: 43px;width: 804px;">
+    <p>Apesar de as equipes da APS atuarem com território definido e população adscrita, algumas pessoas podem ter
+        acesso livre
+        ao atendimento como consequência da sua condição de saúde e isso deve ser previsto no fluxo da unidade, como
+        aquelas
+        pessoas que apresentam situações agudas ou crônicas agudizadas, as que buscam por procedimentos como
+        vacinação,
+        nebulização, sutura, entre outros grupos (DISTRITO FEDERAL, 2018). </p>
+    <p>Para conhecer exemplos de fluxos para os usuários na
+        UBS, clique sobre os itens.</p>
+    <div style="display: flex; margin-left: 100px;margin-top: 47px;width: 590px;justify-content: space-around;">
+        <div id="botao_1" style="cursor: pointer;">
+            <img id="bt1" src="recursos/imgs/bots_1.svg" style=" width: 189px;">
+            <img id="btn_1_2" src="recursos/imgs/bots_1_2.svg.svg"
+                style="width: 189px;margin-top: -10px; display: none;">
+        </div>
+        <div id="botao_2" style="cursor: pointer;">
+            <img id="bt2" src="recursos/imgs/bots_2.svg" style=" width: 189px;">
+            <img id="btn_2_2" src="recursos/imgs/bots_2_2.svg.svg"
+                style="width: 189px;margin-top: -10px; display: none;">
+        </div>
+        <div id="botao_3" style="cursor: pointer;">
+            <img id="bt3" src="recursos/imgs/bots_3.svg" style=" width: 189px;">
+            <img id="btn_3_2" src="recursos/imgs/bots_3_2.svg.svg"
+                style="width: 189px;margin-top: -10px; display: none;">
+        </div>
+    </div>
+    <div>
+        <div id="janela_1"
+            style="position: absolute; top: 0;left: 0;z-index: 100;width: 890px; height: 501px; background: 0% 0% no-repeat padding-box padding-box rgba(0, 4, 67, 0.79); ">
+            <img src="recursos/imgs/figura1.png"
+                style=" width: 653px;height: 486px;margin-left: 120px;;margin-top: 6px;">
+        </div>
+        <div id="janela_2"
+            style="position: absolute; top: 0;left: 0;z-index: 100;width: 890px; height: 501px; background: 0% 0% no-repeat padding-box padding-box rgba(0, 4, 67, 0.79); ">
+            <img src="recursos/imgs/figura2.png"
+                style="position: absolute;top: 5px;left: 186px;width: 518px;height: 490px;">
+        </div>
+        <div id="janela_3"
+            style="position: absolute; top: 0;left: 0;z-index: 100;width: 890px; height: 501px; background: 0% 0% no-repeat padding-box padding-box rgba(0, 4, 67, 0.79); ">
+            <img src="recursos/imgs/figura3.png"
+                style="position: absolute;top: 20px;left: 36px;width: 817px;height: 460px;">
+        </div>
+    </div>
+    <p style="text-align: center;margin-top: 26px;">O áudio a seguir explica como deve ser feito o acolhimento na
+        UBS.</p>
+    <div style="margin-top: 10px;margin-left: 256px;width: 269px;">
+        <audio controls="">
+            <source src="recursos/audio/M2_U5_podcast6_Tela57.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div style="margin-top: -17px;margin-left: 20px;">
+            <a href="recursos/pdf/M2_U5_podcast6.pdf" target="_blank">Texto do áudio</a>
         </div>
     </div>
 </div>
+<footer
+    style="width: 1008px;height: 19px;display: flex;background-color: #0D536A;align-items: center;justify-content: flex-start;">
+    <p style="margin-left: 15px;color: white;font-size: 11px;margin-top: 12px;">ACESSO, ACOLHIMENTO E GESTÃO DA AGENDA
+    </p>
+</footer>
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        $(document).find('[id^=btn]').hide();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).css('cursor', 'pointer');
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+                $(document).find(`[id=btn_${index + 1}_2]`).show();
+                $(document).find(`[id=bt${index + 1}]`).hide();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+                $(document).find(`[id=btn_${index + 1}_2]`).hide();
+                $(document).find(`[id=bt${index + 1}]`).show();
+            })
+        }
+    })
+</script>

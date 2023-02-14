@@ -5,64 +5,32 @@
     <p style="position: absolute;color: white;margin-left: 112px;margin-top: 26px;font-size: 11px;width: 450px;">
         ACOLHIMENTO NAS PRÁTICAS DE GESTÃO E ATENÇÃO À SAÚDE NA APS</p>
 </div>
-<div style="margin-top: 53px;margin-left: 39px;width: 812px;">
-    <p>A análise de vulnerabilidade pode ser realizada em diferentes momentos de encontro entre equipe e indivíduos
-        e é um
-        importante instrumento do trabalho do agente comunitário de saúde, assim como de toda a equipe. Entendendo o
-        desafio e a
-        variabilidade das situações das pessoas e das comunidades, alguns autores elaboraram instrumentos para
-        apoiar essa
-        análise.</p>
-    <p style="margin-top: 22px;text-align: center;">Clique nos instrumentos para conhecê-los.</p>
-    <div style="display: flex; margin-left: 100px;margin-top: 47px;width: 590px;justify-content: space-around;">
-        <a href="recursos/pdf/Tela66_EscalaCoelhoSavasi.pdf" target="_blank">
-            <div class="animate__animated animate__backInLeft" id="botao_1" style="cursor: pointer;">
-                <img id="bt1" src="recursos/imgs/btn1.svg" style=" width: 189px;">
-                <img id="btn_1_2" src="recursos/imgs/btnn_1_2.svg"
-                    style="width: 189px;margin-top: -10px; display: none;">
-            </div>
-        </a>
-        <a href="recursos/pdf/Tela66_Classificacao_de_RiscoVulnerabilidades.pdf" target="_blank">
-            <div class="animate__animated animate__backInRight" id="botao_2" style="cursor: pointer;">
-                <img id="bt2" src="recursos/imgs/btn2.svg" style=" width: 189px;">
-                <img id="btn_2_2" src="recursos/imgs/btnn_2_2.svg"
-                    style="width: 189px;margin-top: -10px; display: none;">
-            </div>
-        </a>
+<div style="margin-top: 42px;margin-left: 24px;">
+    <p style="width: 790px;">Na avaliação com classificação de risco, o atendimento ocorre a partir da análise (com
+        uso de protocolos
+        preestabelecidos) do grau de necessidade da pessoa que busca o serviço, o que permite uma atenção que
+        considera
+        a
+        complexidade e não a ordem de chegada.</p>
+    <div style="display: flex;flex-direction: row;justify-content: space-between;">
+        <div style="margin-top: 26px;width: 281px;">
+            <p>O acolhimento com classificação de risco contribui para o atendimento imediato das pessoas que
+                apresentam
+                um
+                grau de
+                risco elevado, assim como informa às pessoas e aos familiares e acompanhantes sobre o seu risco
+                clínico,
+                dando assim
+                transparência aos critérios de priorização do atendimento (BRASIL, 2009).</p>
+        </div>
+        <div class="coluna-direita animate__animated animate__backInRight">
+            <img style="margin-top: 26px;margin-right: 24px;width: 559px;height: 200px;"
+                src="recursos/imgs/Grupo_3190.svg">
+        </div>
     </div>
-    <div id="janela"></div>
-    <div id="janela"></div>
 </div>
-<footer style="width: 1008px;height: 19px;display: flex;background-color: #0D536A;">
-    <div style="margin-top: -8px;display: flex;margin-left: 42px;">
-        <p style="color: white;font-size: 12px;">MÓDULO 2</p>
-        <p style="margin-left: 15px;color: white;font-size: 11px;margin-top: 12px;">CONHECIMENTOS ESTRATÉGICOS PARA
-            A GESTÃO DA ESF</p>
-        <p style="margin-left: 140px;color: white;font-size: 12px;">UNIDADE 5</p>
-        <p style="margin-left: 15px;color: white;font-size: 11px;margin-top: 12px;">Acesso, acolhimento e gestão da
-            agenda</p>
-    </div>
+<footer
+    style="width: 1008px;height: 19px;display: flex;background-color: #0D536A;align-items: center;justify-content: flex-start;">
+    <p style="margin-left: 15px;color: white;font-size: 11px;margin-top: 12px;">ACESSO, ACOLHIMENTO E GESTÃO DA AGENDA
+    </p>
 </footer>
-<script>
-    $(() => {
-        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
-        apagarJanelas();
-        $(document).find('[id^=btn]').hide();
-        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
-            $(botao).css('cursor', 'pointer');
-            $(botao).click(() => {
-                apagarJanelas();
-                // $(janelas[index]).fadeIn();
-                $(document).find(`[id=btn_${index + 1}_2]`).show();
-                $(document).find(`[id=bt${index + 1}]`).hide();
-            })
-        })
-        function apagarJanelas() {
-            janelas.map((index, janela) => {
-                // $(janela).hide();
-                $(document).find(`[id=btn_${index + 1}_2]`).hide();
-                $(document).find(`[id=bt${index + 1}]`).show();
-            })
-        }
-    })
-</script>
